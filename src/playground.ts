@@ -36,19 +36,32 @@ console.log(`f Last > ${last(names)}`);
 
 const concat = (a, b) => [...a, ...b];
 
-console.log(concat(names, nationalities));
+console.log(`f Concat > ${concat(names, nationalities)}`);
 
 // Optional
 
 const concatOptional = (...rest) => rest;
 
-console.log(concatOptional(...names, ...nationalities));
+console.log(`f Optional > ${concatOptional(...names, ...nationalities)}`);
 
 // 3. Clone Merge
 
+// Clone
+
 function clone(source) {
-  const newObject = { ...source };
-  return newObject;
+  return { ...source };;
 }
 
-console.log(clone(employee));
+console.log('f Clone >' clone(employee));
+
+// Merge 
+const a = { name: "Maria", surname: "Ibañez", country: "SPA" };
+const b = { name: "Luisa", age: 31, married: true };
+
+const merge = (source, target)=>{
+ return {...target, ...source} 
+}
+
+console.log(merge(a, b))
+
+// 4. Read Books
